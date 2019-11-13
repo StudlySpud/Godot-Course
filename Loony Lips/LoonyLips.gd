@@ -13,10 +13,25 @@ func _ready():
 
 func pick_current_story():
 	randomize()
-	var stories = $StoryBook.get_child_count()
-	var selected_story = randi() % stories
-	current_story.prompts = $StoryBook.get_child(selected_story).prompts
-	current_story.story = $StoryBook.get_child(selected_story).story
+	
+	#this section used to get stories from StoryBook as Json
+	var stories = get_from_json("StoryBook.json")
+	current_story = stories[randi() % stories.size()]
+	
+	#This section used to get stories from StoryBook as object
+	#	var stories = $StoryBook.get_child_count()
+	#	var selected_story = randi() % stories
+	#	current_story.prompts = $StoryBook.get_child(selected_story).prompts
+	#	current_story.story = $StoryBook.get_child(selected_story).story
+
+
+func get_from_json(filename):
+	var file = File.new()
+	file.open(filename, File.READ)
+	var text = file.get_as_text()
+	var data = parse_json(text)
+	file.close()
+	return data
 
 func _on_Button_pressed():
 	if is_story_done():

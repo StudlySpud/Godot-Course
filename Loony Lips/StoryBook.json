@@ -1,0 +1,14 @@
+[
+	{
+	"prompts" : ["a name", "a noun", "an adjective", "another adjective"],
+	"story" : "%s had a %s and it was %s, he felt %s"
+	},
+	{
+	"prompts" : ["an adjective", "a noun", "a verb", "an adjective", "a noun", "a name"],
+	"story" : "A %s %s went and %s a %s %s named %s"
+	},
+	{
+	"prompts" : ["an adjective", "a name", "a noun", "another noun"],
+	"story" : "Once a %s wizard named %s needed to find a mystical %s to fix his %s"
+	}
+]
