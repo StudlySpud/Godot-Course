@@ -53,11 +53,11 @@ margin_top = 472.0
 margin_right = 976.0
 margin_bottom = 552.0
 custom_constants/separation = 12
+alignment = 2
 
 [node name="InputText" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
 margin_right = 803.0
 margin_bottom = 80.0
-rect_min_size = Vector2( 800, 80 )
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 2 )
 
