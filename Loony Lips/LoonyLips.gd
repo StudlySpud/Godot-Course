@@ -1,22 +1,7 @@
 extends Control
 
 var player_words = []
-var template = [
-		{
-		"prompts" : ["a name", "a noun", "an adjective", "another adjective"],
-		"story" : "%s had a %s and it was %s, he felt %s"
-		},
-		{
-		"prompts" : ["an adjective", "a noun", "a verb", "an adjective", "a noun", "a name"],
-		"story" : "A %s %s went and %s a %s %s named %s"
-		},
-		{
-		"prompts" : ["an adjective", "a name", "a noun", "another noun"],
-		"story" : "Once a %s wizard named %s needed to find a mystical %s to fix his %s"
-		}
-		]
-
-var current_story
+var current_story = {}
 
 onready var PlayerText = $VBoxContainer/HBoxContainer/InputText
 onready var DisplayText = $VBoxContainer/DisplayText
@@ -28,7 +13,10 @@ func _ready():
 
 func pick_current_story():
 	randomize()
-	current_story = template[randi() % template.size()]
+	var stories = $StoryBook.get_child_count()
+	var selected_story = randi() % stories
+	current_story.prompts = $StoryBook.get_child(selected_story).prompts
+	current_story.story = $StoryBook.get_child(selected_story).story
 
 func _on_Button_pressed():
 	if is_story_done():
