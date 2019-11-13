@@ -1,0 +1,74 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://GFX/Environment/ground_grass.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 184, 45.4199 )
+
+[node name="Level1" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -319.673, -165.025 )
+
+[node name="Floor" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( -113.406, 529.8 )
+scale = Vector2( 1.95819, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floor"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+visible = false
+shape = SubResource( 1 )
+one_way_collision_margin = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Floor2" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 490.966, 661.581 )
+scale = Vector2( 1.95819, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floor2"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
+visible = false
+shape = SubResource( 1 )
+one_way_collision_margin = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Floor3" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 1120.33, 795.633 )
+scale = Vector2( 1.95819, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floor3"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor3"]
+visible = false
+shape = SubResource( 1 )
+one_way_collision_margin = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 508.944, 302.186 )
+current = true
+zoom = Vector2( 2, 2 )
