@@ -8,7 +8,7 @@ radius = 60.55
 height = 85.2
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 529.253, 282.3 )
+position = Vector2( 512, 300 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -21,4 +21,14 @@ shape = SubResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 700, 0 )
+current = true
+zoom = Vector2( 2.5, 2.5 )
+limit_left = -1000
+limit_smoothed = true
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+smoothing_enabled = true
 [connection signal="animate" from="." to="PlayerAnimation" method="_on_Player_animate"]
