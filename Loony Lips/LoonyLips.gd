@@ -15,7 +15,7 @@ func pick_current_story():
 	randomize()
 	
 	#this section used to get stories from StoryBook as Json
-	var stories = get_from_json("StoryBook.json")
+	var stories = get_from_json("res://StoryBook.json")
 	current_story = stories[randi() % stories.size()]
 	
 	#This section used to get stories from StoryBook as object
