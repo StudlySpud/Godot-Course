@@ -2,9 +2,9 @@ extends KinematicBody2D
 
 var motion = Vector2(0,0)
 const SPEED = 1500
-const GRAVITY = 300
+const GRAVITY = 150
 const UP = Vector2(0,-1)
-const JUMP_SPEED = 4000
+const JUMP_SPEED = 2750
 
 signal animate
 
