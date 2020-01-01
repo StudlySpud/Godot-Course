@@ -10,8 +10,6 @@ const BOOST_MULTIPLIER = 1.6
 #When the player falls down to this Y absolute position, he is detected as fallen off the map
 const WORLD_MAX_FALL_LIMIT = 4000
 
-var lives = 3
-
 signal animate
 
 func _ready():
@@ -26,9 +24,9 @@ func _physics_process(delta):
 
 func apply_gravity():
 	if position.y > WORLD_MAX_FALL_LIMIT:
-		end_game()
-	if is_on_floor():
-		motion.y = 5
+		get_tree().call_group("GameState", "end_game")
+	elif is_on_floor() and motion.y > 0:
+		motion.y = 0
 	elif is_on_ceiling():
 		motion.y = 1
 	else:
@@ -49,21 +47,14 @@ func jump():
 func animate():
 	emit_signal("animate", motion)
 	
-	
-func end_game():
-	get_tree().change_scene("res://Scenes/Levels/GameOver.tscn")
-	
 func hurt():
-	$PainSFX.play()
 	position.y -= GRAVITY
 	yield(get_tree(), "idle_frame") #this will force the script to do nothing until next frame
 	motion.y =- JUMP_SPEED #Note the absolute setting, not just subtracting!  Or you could double jump by landing on a spike
-	lives -=1
-	if lives < 0:
-		end_game()
+	$PainSFX.play()
 
 func boost():
-	position.y-=GRAVITY
+	position.y -= GRAVITY
 	yield(get_tree(), "idle_frame")
 	motion.y =- (JUMP_SPEED*BOOST_MULTIPLIER)
 	$JumpSFX.play()
