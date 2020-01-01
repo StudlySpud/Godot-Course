@@ -5,6 +5,7 @@ const SPEED = 1500
 const GRAVITY = 150
 const UP = Vector2(0,-1)
 const JUMP_SPEED = 2750
+const BOOST_MULTIPLIER = 1.6
 
 #When the player falls down to this Y absolute position, he is detected as fallen off the map
 const WORLD_MAX_FALL_LIMIT = 4000
@@ -60,3 +61,9 @@ func hurt():
 	lives -=1
 	if lives < 0:
 		end_game()
+
+func boost():
+	position.y-=GRAVITY
+	yield(get_tree(), "idle_frame")
+	motion.y =- (JUMP_SPEED*BOOST_MULTIPLIER)
+	$JumpSFX.play()

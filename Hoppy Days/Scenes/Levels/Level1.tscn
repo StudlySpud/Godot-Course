@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Levels/Tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://LevelElements/Hazards/SpikeTop.tscn" type="PackedScene" id=3]
-[ext_resource path="res://SFX/Summer_Park.ogg" type="AudioStream" id=4]
+[ext_resource path="res://LevelElements/Items/SpringPad.tscn" type="PackedScene" id=4]
+[ext_resource path="res://SFX/Summer_Park.ogg" type="AudioStream" id=5]
 
 [node name="Level1" type="Node2D"]
 
@@ -14,10 +15,9 @@ position = Vector2( -374.681, 43.0493 )
 tile_set = ExtResource( 2 )
 collision_layer = 2
 format = 1
-tile_data = PoolIntArray( -393191, 0, 0, -393185, 0, 0, -393179, 0, 0, -393173, 0, 0, -393162, 0, 0, -327572, 0, 0, -262067, 0, 0, -262024, 1, 0, -196591, 3, 0, -196516, 0, 0, -65476, 0, 0, 104, 1, 0, 65610, 1, 0, 131093, 3, 0, 262136, 2, 0, 196731, 0, 0, 196737, 0, 0, 196743, 0, 0, 196749, 0, 0, 262225, 0, 0, 393214, 2, 0, 327797, 1, 0, 458756, 2, 0, 458820, 0, 0, 458844, 1, 0, 458845, 1, 0, 458863, 1, 0, 524305, 3, 0, 589926, 0, 0, 720888, 3, 0, 786428, 3, 0, 786432, 3, 0, 786436, 2, 0, 786442, 2, 0, 786452, 2, 0, 786458, 2, 0, 786464, 2, 0, 983079, 0, 0, 1245228, 0, 0, 1441843, 0, 0, 1441851, 0, 0, 1441862, 0, 0, 1441872, 0, 0, 1441882, 0, 0, 1441890, 0, 0, 1638505, 0, 0, 1769585, 0, 0 )
+tile_data = PoolIntArray( -1179654, 2, 0, -1245184, 2, 0, -1179581, 0, 0, -1179561, 0, 0, -1114039, 1, 0, -1114029, 1, 0, -1048481, 1, 0, -917403, 1, 0, -786327, 0, 0, -786321, 0, 0, -393209, 2, 0, -393191, 0, 0, -393185, 0, 0, -393179, 0, 0, -393173, 0, 0, -393162, 0, 0, -327572, 0, 0, -262067, 0, 0, -262024, 1, 0, -196591, 3, 0, -196516, 0, 0, -65476, 0, 0, 104, 1, 0, 65610, 1, 0, 131093, 3, 0, 262136, 2, 0, 196686, 0, 0, 196731, 0, 0, 196737, 0, 0, 196743, 0, 0, 196749, 0, 0, 393214, 2, 0, 327765, 0, 0, 327797, 1, 0, 458756, 2, 0, 458820, 0, 0, 458844, 1, 0, 458845, 1, 0, 458850, 0, 0, 458856, 0, 0, 458863, 1, 0, 524305, 3, 0, 720888, 3, 0, 786428, 3, 0, 786432, 3, 0, 786436, 2, 0, 786442, 2, 0, 786452, 2, 0, 786458, 2, 0, 786464, 2, 0, 983079, 0, 0, 1245228, 0, 0, 1441843, 0, 0, 1441851, 0, 0, 1441862, 0, 0, 1441872, 0, 0, 1441882, 0, 0, 1441890, 0, 0, 1638505, 0, 0, 1769585, 0, 0 )
 
 [node name="Hazards" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="SpikeTop" parent="Hazards" instance=ExtResource( 3 )]
 position = Vector2( 326.623, 421.357 )
@@ -38,7 +38,10 @@ position = Vector2( 2238.67, -415.163 )
 position = Vector2( 2668, -415.163 )
 
 [node name="SpikeTop7" parent="Hazards" instance=ExtResource( 3 )]
-position = Vector2( 5124.36, -289.323 )
+position = Vector2( 4958.92, -282.848 )
+
+[node name="SpikeTop11" parent="Hazards" instance=ExtResource( 3 )]
+position = Vector2( 5279.1, -284.206 )
 
 [node name="SpikeTop8" parent="Hazards" instance=ExtResource( 3 )]
 position = Vector2( 6091.04, -220.683 )
@@ -49,7 +52,18 @@ position = Vector2( 7109.21, -352.243 )
 [node name="SpikeTop10" parent="Hazards" instance=ExtResource( 3 )]
 position = Vector2( 8070.17, 162.558 )
 
+[node name="Items" type="Node" parent="."]
+
+[node name="SpringPad" parent="Items" instance=ExtResource( 4 )]
+position = Vector2( 524.592, -407.571 )
+
+[node name="SpringPad2" parent="Items" instance=ExtResource( 4 )]
+position = Vector2( 4549.9, 413.146 )
+
+[node name="SpringPad3" parent="Items" instance=ExtResource( 4 )]
+position = Vector2( 5117.57, -290.514 )
+
 [node name="BGM" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
+stream = ExtResource( 5 )
 volume_db = -15.0
 autoplay = true
