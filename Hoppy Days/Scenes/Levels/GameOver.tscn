@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Levels/GameOver.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Background/bg_layer1.png" type="Texture" id=2]
 [ext_resource path="res://Fonts/candles_.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://GFX/HUD/lifes.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Levels/TextureButton.gd" type="Script" id=5]
+[ext_resource path="res://SFX/Summer_Park.ogg" type="AudioStream" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 128
@@ -69,4 +70,9 @@ margin_right = 550.0
 margin_bottom = 71.0
 texture_normal = ExtResource( 4 )
 script = ExtResource( 5 )
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -10.0
+autoplay = true
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/RestartButton" to="." method="_on_RestartButton_pressed"]
