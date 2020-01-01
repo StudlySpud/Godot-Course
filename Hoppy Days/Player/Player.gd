@@ -6,6 +6,9 @@ const GRAVITY = 150
 const UP = Vector2(0,-1)
 const JUMP_SPEED = 2750
 
+#When the player falls down to this Y absolute position, he is detected as fallen off the map
+const WORLD_MAX_FALL_LIMIT = 4000
+
 signal animate
 
 func _ready():
@@ -19,6 +22,8 @@ func _physics_process(delta):
 	move_and_slide(motion, UP)
 
 func apply_gravity():
+	if position.y > WORLD_MAX_FALL_LIMIT:
+		end_game()
 	if is_on_floor():
 		motion.y = 5
 	elif is_on_ceiling():
@@ -39,3 +44,7 @@ func jump():
 
 func animate():
 	emit_signal("animate", motion)
+	
+	
+func end_game():
+	get_tree().change_scene("res://Scenes/Levels/GameOver.tscn")
