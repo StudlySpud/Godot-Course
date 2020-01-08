@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Heist Masters"
-run/main_scene="res://Levels/TemplateLevel.tscn"
+run/main_scene="res://Levels/TestDevLevel.tscn"
 config/icon="res://icon.png"
 
 [input]
@@ -56,6 +56,12 @@ zoom_out={
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":5,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Tilemap"
+2d_physics/layer_3="NPC"
 
 [rendering]
 
