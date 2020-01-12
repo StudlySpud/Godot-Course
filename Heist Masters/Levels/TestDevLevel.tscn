@@ -18,6 +18,9 @@ position = Vector2( 95.2002, 455.959 )
 [node name="Destination2" type="Position2D" parent="Navigation2D/Destinations" index="2"]
 position = Vector2( 591.69, 688.894 )
 
+[node name="Furniture" parent="Navigation2D" index="2"]
+tile_data = PoolIntArray( 393225, 1610612739, 0, 393226, 2, 0, 393227, 3, 0, 589832, 1, 0, 589834, 1, 0 )
+
 [node name="Player" parent="." index="1"]
 position = Vector2( 79.7672, 544.522 )
 

@@ -30,8 +30,9 @@ func update_movement(delta):
 	
 
 func _input(event):
-	if Input.is_action_just_pressed("torch_toggle"):
-		$Torch.enabled = !$Torch.enabled
+	
+#	if Input.is_action_just_pressed("torch_toggle"):
+#		$Torch.enabled = !$Torch.enabled
 	
 	if Input.is_action_pressed("zoom_in"):
 		$Camera2D.zoom.x -= ZOOM_SCALE
